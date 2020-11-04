@@ -7,7 +7,6 @@ const verifyRut = (rut) => {
         return x * numbers[i];
     }).reverse();
     let digit = Math.floor(11 - (result.reduce((a, b) => a + b, 0) % 11));
-    console.log(digit);
     return verifyDigit(rut, getDigit(digit));
 }
 
@@ -17,7 +16,6 @@ const verifyDigit = (rut, digit) => {
     }
     const length = rut.length;
     const d = rut.substring(length - 1);
-    console.log(d, digit);
     return d == digit
 }
 const getRut = (rut) => rut.toUpperCase().substring(0, rut.length - 1);
