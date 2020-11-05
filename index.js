@@ -25,6 +25,7 @@ const getDigit = (digit) => digit === 10 ? 'k' : digit === 11 ? 0 : digit;
 
 // events
 input.addEventListener('input', (event) => {
+    input.style.textTransform = 'upperCase';
     if (!verifyRut(event.target['value'])) {
         input.classList.add('is-invalid');
     } else {
