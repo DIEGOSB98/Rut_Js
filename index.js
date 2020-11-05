@@ -1,11 +1,13 @@
-const numbers = [7, 2, 3, 4, 5, 6, 7, 2].reverse();
 // template
 const input = document.querySelector('input');
 
 const verifyRut = (rut) => {
-    const result = getRut(rut).split('').map((x, i) => {
-        return x * numbers[i];
-    }).reverse();
+    let n = 1;
+    const result = getRut(rut).split('').reverse().map((x, i) => {
+        n++;
+        n = (n === 8) ? 2 : n;
+        return x * n;
+    });
     let digit = Math.floor(11 - (result.reduce((a, b) => a + b, 0) % 11));
     return verifyDigit(rut, getDigit(digit));
 }
